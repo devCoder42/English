@@ -101,54 +101,80 @@ a{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
 }
 
-
-  
-  @media (max-width: 768px) {
+@media (max-width: 1080px) {
+    /* Header responsive */
     .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Logo și link-uri vor fi separate */
+        gap: 15px;  /* Distanțare între logo și link-uri */
+        padding: 10px 20px;  /* Mai puțin padding pentru economisirea spațiului */
     }
-  
-    .section_1 {
-        display: flex;       
-        justify-content: start; 
-        align-items: center;               
-        width: 100%; 
-        height: 100%;    
-    }
-  
-    .logo{
-        display: flex;       
-        justify-content: center; 
-        align-items: center;  
-   
-        
-    }
-  
-    .section_1 .logo span {
-        font-size: 16px;
-    }
-  
-    .section_2 {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-         
 
+    /* Secțiunea 1 - Logo și link-uri */
+    .section_1 {
+        display: flex;
+        justify-content: flex-start; /* Asigură distanțare între logo și container */
+        align-items: center;
+        width: 100%;
+        height: auto;  /* Ajustăm înălțimea pentru a se potrivi */
     }
-  
-    .container {       
-        display: flex;       
-        justify-content: center; 
-        align-items: center;  
-                 
+
+    /* Logo responsive */
+    .logo_1,
+    .logo {
+        font-size: 22px;  /* Font mai mic pe ecran mic */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;  /* Eliminăm padding-ul pentru a lipi textul */
+        margin: 0;  /* Eliminăm margin pentru a lipi textul */
+        gap: 0;  /* Eliminăm orice gap între elementele din logo */
     }
-    .container a{
-        font-size: 16px;
+
+    /* Dimensiunea fontului pentru span din logo */
+    .section_1 .logo span,
+    .section_1 .logo_1 span {
+        font-size: 14px;  /* Font mai mic pentru span */
     }
-    
-  }
-  
+
+    /* Logo_1 responsive */
+    .logo_1 {
+        font-size: 20px;  /* Font mai mic pentru logo_1 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Secțiunea 2 pentru link-uri */
+    .section_2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;  /* Aliniază la stânga link-urile */
+        gap: 15px;  /* Un pic de spațiu între link-uri */
+    }
+
+    /* Container responsive */
+    .container {
+        display: flex;
+        justify-content: flex-start;  /* Aliniere la stânga pe mobil */
+        align-items: center;
+        width: 100%;  /* Asigură că containerul folosește toată lățimea disponibilă */
+        gap: 10px; /* Spațiu între link-uri */
+    }
+
+    /* Link-uri din container */
+    .container a {
+        font-size: 14px;  /* Reducem font-ul pentru "Cursuri" și "Contacte" */
+        padding: 8px 15px;  /* Ajustează padding pentru link-uri */
+        color: #fff;  /* Culoare albă pentru text */
+    }
+
+    /* Responsivitate suplimentară pentru container la hover */
+    .container a:hover {
+        background: linear-gradient(90deg, #ff006e, #fb5607); /* Gradient pe hover */
+        color: #000;  /* Text negru la hover */
+        transform: scale(1.05); /* Ușoară mărire la hover */
+    }
+}
